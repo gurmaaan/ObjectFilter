@@ -1,0 +1,18 @@
+AvBrR - Средняя яркость R
+AvBrG - Средняя яркость G
+AvBrB - Средняя яркость B
+SKOR - СКО R
+SKOG - СКО G
+SKOB - СКО B
+IntervalR - Диапазон R
+IntervalG - Диапазон G
+IntervalB - Диапазон B
+TextureR - Текстур призн МПС R
+TextureG - Текстур призн МПС G
+TextureB - Текстур призн МПС B
+LenthR - Тек пр длины серий R
+LenthG - Тек пр длины серий G
+LenthB - Тек пр длины серий B
+Form - Форма
+Area - Площадь
+Perimet - Периметр

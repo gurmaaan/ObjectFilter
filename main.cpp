@@ -3,9 +3,11 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+    QApplication app(argc, argv);
+    QCoreApplication::setApplicationName("Анализ распределения объектов на изображении");
 
-    return a.exec();
+    MainWindow mainWin;
+    mainWin.show();
+
+    return app.exec();
 }
