@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>858</width>
-    <height>628</height>
+    <width>1483</width>
+    <height>772</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>100</width>
+    <height>0</height>
+   </size>
   </property>
   <property name="font">
    <font>
@@ -23,96 +29,356 @@
    <iconset>
     <normaloff>:/icons/favicon.ico</normaloff>:/icons/favicon.ico</iconset>
   </property>
-  <property name="dockOptions">
-   <set>QMainWindow::AllowNestedDocks|QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks</set>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="tab">
+      <widget class="QWidget" name="file_tab">
        <attribute name="title">
-        <string>Tab 1</string>
+        <string>Файл</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="image_label">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>400</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>28</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background: rgb(255, 255, 255);
+border: 2px double black;</string>
+          </property>
+          <property name="text">
+           <string>Изображение</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="path_label">
+            <property name="text">
+             <string>Изображение</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="image_path">
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+            <property name="placeholderText">
+             <string>Путь к изображению...</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QCheckBox" name="image_loaded_check">
+            <property name="text">
+             <string>Загружено</string>
+            </property>
+            <property name="checkable">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="data_path_label">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Файл данных</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="data_path">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+            <property name="placeholderText">
+             <string>Путь к файлу данных...</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QCheckBox" name="data_loaded_check">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Загружено</string>
+            </property>
+            <property name="checkable">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </widget>
-      <widget class="QWidget" name="tab_2">
+      <widget class="QWidget" name="filter_tap">
        <attribute name="title">
-        <string>Tab 2</string>
+        <string>Фильтры</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <widget class="QScrollArea" name="scrollArea">
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOn</enum>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>872</width>
+             <height>556</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string>Параметр</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="parametr_name_edit">
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QCustomPlot" name="hyst" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>300</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+               <widget class="QSpinBox" name="param_val_min">
+                <property name="buttonSymbols">
+                 <enum>QAbstractSpinBox::NoButtons</enum>
+                </property>
+                <property name="showGroupSeparator" stdset="0">
+                 <bool>false</bool>
+                </property>
+                <property name="maximum">
+                 <number>255</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSlider" name="param_slider_min">
+                <property name="maximum">
+                 <number>127</number>
+                </property>
+                <property name="value">
+                 <number>0</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="tickPosition">
+                 <enum>QSlider::TicksBelow</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSlider" name="param_slider_max">
+                <property name="minimum">
+                 <number>128</number>
+                </property>
+                <property name="maximum">
+                 <number>255</number>
+                </property>
+                <property name="value">
+                 <number>255</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="invertedAppearance">
+                 <bool>false</bool>
+                </property>
+                <property name="invertedControls">
+                 <bool>false</bool>
+                </property>
+                <property name="tickPosition">
+                 <enum>QSlider::TicksBelow</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="param_val_max">
+                <property name="buttonSymbols">
+                 <enum>QAbstractSpinBox::NoButtons</enum>
+                </property>
+                <property name="maximum">
+                 <number>255</number>
+                </property>
+                <property name="value">
+                 <number>255</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="Line" name="line">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="groups_tab">
+       <attribute name="title">
+        <string>Группы</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <widget class="QTableView" name="groups_editor"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="application_tab">
+       <attribute name="title">
+        <string>Программа</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <item>
+         <widget class="QTextBrowser" name="textBrowser">
+          <property name="source">
+           <url>
+            <string>qrc:/about.html</string>
+           </url>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>858</width>
-     <height>21</height>
-    </rect>
+  <widget class="QDockWidget" name="objects">
+   <property name="minimumSize">
+    <size>
+     <width>100</width>
+     <height>116</height>
+    </size>
    </property>
-   <widget class="QMenu" name="menu">
-    <property name="title">
-     <string>Файл</string>
-    </property>
-    <addaction name="open_image_ac"/>
-    <addaction name="open_dataFile_act"/>
-    <addaction name="separator"/>
-    <addaction name="close_dataFile_act"/>
-    <addaction name="close_all_act"/>
-    <addaction name="separator"/>
-    <addaction name="save_separtion_act"/>
-    <addaction name="save_image_as"/>
-   </widget>
-   <widget class="QMenu" name="menu_2">
-    <property name="title">
-     <string>Фильтры</string>
-    </property>
-    <addaction name="create_filter_act"/>
-    <addaction name="separator"/>
-    <addaction name="add_param_act"/>
-    <addaction name="change_param_act"/>
-    <addaction name="delete_param_act"/>
-    <addaction name="separator"/>
-    <addaction name="apply_filter_changed_act"/>
-    <addaction name="save_filter_act"/>
-    <addaction name="separator"/>
-    <addaction name="rename_filter_act"/>
-    <addaction name="remove_filter_act"/>
-    <addaction name="change_filter_color_act"/>
-   </widget>
-   <widget class="QMenu" name="menu_3">
-    <property name="title">
-     <string>Группы</string>
-    </property>
-    <addaction name="view_groups_objects_act"/>
-    <addaction name="delete_groups_objects_act"/>
-    <addaction name="exchange_groups_objects_act"/>
-    <addaction name="save_groups_act"/>
-   </widget>
-   <widget class="QMenu" name="menu_4">
-    <property name="title">
-     <string>Программа</string>
-    </property>
-    <addaction name="about_program_act"/>
-    <addaction name="settings_act"/>
-    <addaction name="restart_act"/>
-    <addaction name="exit_act"/>
-   </widget>
-   <addaction name="menu"/>
-   <addaction name="menu_2"/>
-   <addaction name="menu_3"/>
-   <addaction name="menu_4"/>
-  </widget>
-  <widget class="QToolBar" name="toolBar">
+   <property name="features">
+    <set>QDockWidget::NoDockWidgetFeatures</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea</set>
+   </property>
    <property name="windowTitle">
-    <string>toolBar</string>
+    <string>Объекты</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QTreeView" name="treeView"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget">
+   <property name="minimumSize">
+    <size>
+     <width>198</width>
+     <height>116</height>
+    </size>
+   </property>
+   <property name="features">
+    <set>QDockWidget::NoDockWidgetFeatures</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::RightDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Фильтры</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_2">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QTreeView" name="treeView_2"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="file_tools">
+   <property name="windowTitle">
+    <string>Файл</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::TopToolBarArea</set>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -120,125 +386,466 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="open_image_act"/>
    <addaction name="open_dataFile_act"/>
+   <addaction name="separator"/>
+   <addaction name="close_dataFile_act"/>
+   <addaction name="close_all_act"/>
+   <addaction name="separator"/>
+   <addaction name="save_separtion_act"/>
+   <addaction name="save_image_as"/>
   </widget>
-  <action name="open_image_ac">
+  <widget class="QToolBar" name="filter_tools">
+   <property name="windowTitle">
+    <string>toolBar_2</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>true</bool>
+   </attribute>
+   <addaction name="create_filter_act"/>
+   <addaction name="remove_filter_act"/>
+   <addaction name="rename_filter_act"/>
+   <addaction name="change_filter_color_act"/>
+   <addaction name="separator"/>
+   <addaction name="add_param_act"/>
+   <addaction name="change_param_act"/>
+   <addaction name="delete_param_act"/>
+   <addaction name="separator"/>
+   <addaction name="apply_filter_changed_act"/>
+   <addaction name="save_filter_act"/>
+  </widget>
+  <widget class="QToolBar" name="groups_tools">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>Группы</string>
+   </property>
+   <property name="movable">
+    <bool>true</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="exchange_groups_objects_act"/>
+   <addaction name="delete_groups_objects_act"/>
+   <addaction name="separator"/>
+  </widget>
+  <widget class="QToolBar" name="app_tools">
+   <property name="acceptDrops">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>Программа</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::TopToolBarArea</set>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="about_program_act"/>
+   <addaction name="settings_act"/>
+   <addaction name="fullscreen_act"/>
+   <addaction name="restart_act"/>
+   <addaction name="exit_act"/>
+  </widget>
+  <action name="open_image_act">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/open_image_ic.png</normaloff>:/icons/open_image_ic.png</iconset>
+   </property>
    <property name="text">
     <string>Открыть изображение</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
   </action>
   <action name="open_dataFile_act">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/open_dataFile_ic.png</normaloff>:/icons/open_dataFile_ic.png</iconset>
+   </property>
    <property name="text">
     <string>Открыть файл данных</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+O</string>
+   </property>
   </action>
   <action name="close_dataFile_act">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/close_image_ic.png</normaloff>:/icons/close_image_ic.png</iconset>
+   </property>
    <property name="text">
     <string>Закрыть файл данных</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
   </action>
   <action name="close_all_act">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/close_all_ic.png</normaloff>:/icons/close_all_ic.png</iconset>
+   </property>
    <property name="text">
     <string>Закрыть все</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+W</string>
+   </property>
   </action>
   <action name="save_groups_act">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/save_groups_objects_ic.png</normaloff>:/icons/save_groups_objects_ic.png</iconset>
+   </property>
    <property name="text">
     <string>Сохранить группы</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
   </action>
   <action name="save_separtion_act">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/save_separation_ic.png</normaloff>:/icons/save_separation_ic.png</iconset>
+   </property>
    <property name="text">
     <string>Сохранить распределение</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
   </action>
   <action name="save_image_as">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/save_image_as_ic.png</normaloff>:/icons/save_image_as_ic.png</iconset>
+   </property>
    <property name="text">
-    <string>Сохранить изображение ка...</string>
+    <string>Сохранить  как...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
    </property>
   </action>
   <action name="create_filter_act">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/create_filter_ic.png</normaloff>:/icons/create_filter_ic.png</iconset>
+   </property>
    <property name="text">
-    <string>Создать новый фильтр</string>
+    <string>Создать фильтр</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
    </property>
   </action>
   <action name="add_param_act">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/add_param_ic.png</normaloff>:/icons/add_param_ic.png</iconset>
+   </property>
    <property name="text">
     <string>Добавить параметр</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
   </action>
   <action name="change_param_act">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/change_param_ic.png</normaloff>:/icons/change_param_ic.png</iconset>
+   </property>
    <property name="text">
     <string>Изменить параметр</string>
    </property>
+   <property name="shortcut">
+    <string>F2</string>
+   </property>
   </action>
   <action name="delete_param_act">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/delete_param_ic.png</normaloff>:/icons/delete_param_ic.png</iconset>
+   </property>
    <property name="text">
     <string>Удалить параметр</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
   </action>
   <action name="apply_filter_changed_act">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/apply_filter_chenges_ic.png</normaloff>:/icons/apply_filter_chenges_ic.png</iconset>
+   </property>
    <property name="text">
     <string>Применить изменения</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
   </action>
   <action name="save_filter_act">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/save_filter_ic.png</normaloff>:/icons/save_filter_ic.png</iconset>
+   </property>
    <property name="text">
-    <string>Сохранить</string>
+    <string>Сохранить фильтры</string>
+   </property>
+   <property name="toolTip">
+    <string>Сохранить фильтры в файл</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+F</string>
    </property>
   </action>
   <action name="rename_filter_act">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/rename_filter_ic.png</normaloff>:/icons/rename_filter_ic.png</iconset>
+   </property>
    <property name="text">
     <string>Переименовать</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
   </action>
   <action name="remove_filter_act">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/remove_filter_ic.png</normaloff>:/icons/remove_filter_ic.png</iconset>
+   </property>
    <property name="text">
     <string>Удалить</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
    </property>
   </action>
   <action name="view_groups_objects_act">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/view_groups_objects_ic.png</normaloff>:/icons/view_groups_objects_ic.png</iconset>
+   </property>
    <property name="text">
     <string>Просмотр объектов</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
   </action>
   <action name="change_filter_color_act">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/change_filter_color_ic.png</normaloff>:/icons/change_filter_color_ic.png</iconset>
+   </property>
    <property name="text">
     <string>Поменять цвет</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
   </action>
   <action name="delete_groups_objects_act">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/delete_groups_object_ic.png</normaloff>:/icons/delete_groups_object_ic.png</iconset>
+   </property>
    <property name="text">
     <string>Удалить</string>
    </property>
+   <property name="toolTip">
+    <string>Удалить объект из группы</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
   </action>
   <action name="exchange_groups_objects_act">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/exchenge_groups_objects_ic.png</normaloff>:/icons/exchenge_groups_objects_ic.png</iconset>
+   </property>
    <property name="text">
     <string>Обмен</string>
    </property>
+   <property name="toolTip">
+    <string>Обмен объектов между групп</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
   </action>
   <action name="about_program_act">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/about_ic.png</normaloff>:/icons/about_ic.png</iconset>
+   </property>
    <property name="text">
     <string>О программе</string>
    </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
   </action>
   <action name="settings_act">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/settings_ic.png</normaloff>:/icons/settings_ic.png</iconset>
+   </property>
    <property name="text">
     <string>Настройки</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+U</string>
+   </property>
   </action>
   <action name="restart_act">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/restart_ic.png</normaloff>:/icons/restart_ic.png</iconset>
+   </property>
    <property name="text">
     <string>Перезапуск</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+R</string>
+   </property>
   </action>
   <action name="exit_act">
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/exit_ic.png</normaloff>:/icons/exit_ic.png</iconset>
+   </property>
    <property name="text">
     <string>Выход</string>
    </property>
   </action>
+  <action name="fullscreen_act">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sources.qrc">
+     <normaloff>:/icons/full_screen_ic.png</normaloff>:/icons/full_screen_ic.png</iconset>
+   </property>
+   <property name="text">
+    <string>Во весь экран</string>
+   </property>
+   <property name="toolTip">
+    <string>Растянуть приложение во ввесь экран</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
- <connections/>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot/qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="sources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>param_slider_min</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>param_val_min</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>444</x>
+     <y>648</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>334</x>
+     <y>661</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>param_slider_max</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>param_val_max</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>796</x>
+     <y>650</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1130</x>
+     <y>656</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

@@ -1,17 +1,32 @@
 <RCC>
     <qresource prefix="/">
-        <file>icons/file-close.png</file>
-        <file>icons/file-open-data.png</file>
-        <file>icons/file-open-picture.png</file>
-        <file>icons/file-restart.png</file>
-        <file>icons/file-sacw.png</file>
-        <file>icons/file-save-group.png</file>
-        <file>icons/file-turnoff.png</file>
-        <file>icons/filter-add.png</file>
-        <file>icons/filter-delete.png</file>
-        <file>icons/filter-edit.png</file>
-        <file>icons/filter-save.png</file>
         <file>favicon.ico</file>
         <file>iconsource.rc</file>
+        <file>icons/about_ic.png</file>
+        <file>icons/add_param_ic.png</file>
+        <file>icons/apply_filter_chenges_ic.png</file>
+        <file>icons/change_filter_color_ic.png</file>
+        <file>icons/change_param_ic.png</file>
+        <file>icons/close_all_ic.png</file>
+        <file>icons/close_image_ic.png</file>
+        <file>icons/create_filter_ic.png</file>
+        <file>icons/delete_groups_object_ic.png</file>
+        <file>icons/delete_param_ic.png</file>
+        <file>icons/exchenge_groups_objects_ic.png</file>
+        <file>icons/exit_ic.png</file>
+        <file>icons/favicon.png</file>
+        <file>icons/full_screen_ic.png</file>
+        <file>icons/open_image_ic.png</file>
+        <file>icons/remove_filter_ic.png</file>
+        <file>icons/rename_filter_ic.png</file>
+        <file>icons/restart_ic.png</file>
+        <file>icons/save_filter_ic.png</file>
+        <file>icons/save_groups_objects_ic.png</file>
+        <file>icons/save_image_as_ic.png</file>
+        <file>icons/save_separation_ic.png</file>
+        <file>icons/settings_ic.png</file>
+        <file>icons/view_groups_objects_ic.png</file>
+        <file>icons/open_dataFile_ic.png</file>
+        <file>about.html</file>
     </qresource>
 </RCC>
